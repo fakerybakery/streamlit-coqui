@@ -28,7 +28,7 @@ def tts(text: str, language: str):
 
 st.title(title)
 st.subheader(description)
-st.text(info)
+st.markdown(info)
 txt = st.text_area("Text")
 if st.button('Submit'):
     audio_file = open(tts(txt, "en"), 'rb')
