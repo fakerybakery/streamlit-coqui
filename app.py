@@ -31,6 +31,9 @@ st.subheader(description)
 st.markdown(info)
 txt = st.text_area("Text")
 if st.button('Submit'):
-    audio_file = open(tts(txt, "en"), 'rb')
-    audio_bytes = audio_file.read()
-    st.audio(audio_bytes, format='audio/wav')
+    with st.spinner('Wait for it...'):
+        audio_file = open(tts(txt, "en"), 'rb')
+        audio_bytes = audio_file.read()
+        st.balloons()
+        st.success("Yay! Check out your TTS! P.S. Why not follow my GitHub, I'm @fakerybakery on GitHub!", icon="✅")
+        st.audio(audio_bytes, format='audio/wav')
