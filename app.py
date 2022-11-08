@@ -29,7 +29,7 @@ def tts(text: str, language: str):
 st.title(title)
 st.subheader(description)
 st.text(info)
-txt = st.text_area(label, value="", height=None, max_chars=None, key=None, help=None, on_change=None, args=None, kwargs=None, *, placeholder=None, disabled=False, label_visibility="visible")
+txt = st.text_area("Text")
 if st.button('Submit'):
     audio_file = open(tts(txt, "en"), 'rb')
     audio_bytes = audio_file.read()
